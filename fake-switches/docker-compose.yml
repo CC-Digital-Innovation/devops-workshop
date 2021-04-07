@@ -1,0 +1,12 @@
+version: "3"
+services:
+  fake-switch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    runtime: sysbox-runc
+    environment:
+      - SWITCH_MODEL=cisco_2960_48TT_L
+    ports:
+      - "2200-2220:22"
+    restart: unless-stopped

@@ -1,0 +1,21 @@
+version: "3"
+services:
+  slack:
+    image: outsideris/slack-invite-automation
+    container_name: slack-invite-automation
+    runtime: sysbox-runc
+    environment:
+      - COMMUNITY_NAME="DevOps Workshop"
+      - SLACK_URL="workspace.slack.com"
+      - SLACK_TOKEN="SLACK_WEBHOOK_URL"
+      - VIRTUAL_HOST=slack.quokka.ninja
+      - VIRTUAL_PORT=3000
+    # ports:
+    #   - 3200:3000
+    expose:
+      - 3000
+    restart: unless-stopped
+networks:
+  default:
+    external:
+      name: devops-workshop-net

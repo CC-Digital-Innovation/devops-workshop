@@ -1,0 +1,143 @@
+---
+version: "3"
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: unless-stopped
+  code-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${CONTAINER_NAME:-workshop-user-env-master}
+    runtime: sysbox-runc
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=US/Eastern
+      - PASSWORD=workshop
+      - SUDO_PASSWORD=root
+      - VIRTUAL_HOST=user0.quokka.ninja
+      - VIRTUAL_PORT=8443
+    volumes:
+      - $HOME/devops-workshop/data/userdata/user0/config:/config
+      # - /var/run/docker.sock:/var/run/docker.sock
+    # ports:
+    #   - 8000:8443
+    expose:
+      - 8443
+    restart: unless-stopped
+  gitea:
+    image: gitea/gitea
+    container_name: gitea
+    runtime: sysbox-runc
+    environment:
+      - USER_UID=1100
+      - USER_GID=1100
+      - VIRTUAL_HOST=git.quokka.ninja
+      - VIRTUAL_PORT=3000
+    volumes:
+      - $HOME/devops-workshop/data/appdata/gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      # - "3000:3000"
+      - "2222:22"
+    expose:
+      - 3000
+      # - 22
+    restart: unless-stopped
+  jenkins:
+    image: jenkins/jenkins
+    container_name: jenkins
+    runtime: sysbox-runc
+    # uncomment for docker in docker
+    privileged: true
+    user: root
+    environment:
+      - VIRTUAL_HOST=jenkins.quokka.ninja
+      - VIRTUAL_PORT=8080
+    volumes:
+      - $HOME/devops-workshop/data/appdata/jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    ports:
+      # - 8080:8080
+      - 50000:50000
+    expose:
+      - 8080
+    restart: unless-stopped
+expand:
+  vars:
+  services:
+    - name: "{{ name }}"
+      service:
+        image: workshop-user-envs_code-server
+        restart: unless-stopped
+        environment:
+          - PUID={{ puid }}
+          - PGID={{ pgid }}
+          - TZ=US/Eastern
+          - PASSWORD=workshop
+          - SUDO_PASSWORD=root
+          - VIRTUAL_HOST= {{ url }}
+        volumes:
+          - "$HOME/devops-workshop/data/userdata/{{ name }}/config/:/config/"
+        # ports:
+        #   - "{{ port }}:8443"
+        # expose:
+        #   - "{{ port }}"
+      loop:
+        - name: user1
+          port: 8001
+          puid: 1001
+          pgid: 1001
+          url: user1.quokka.ninja
+        - name: user2
+          port: 8002
+          puid: 1002
+          pgid: 1002
+          url: user2.quokka.ninja
+        - name: user3
+          port: 8003
+          puid: 1003
+          pgid: 1003
+          url: user3.quokka.ninja
+        - name: user4
+          port: 8004
+          puid: 1004
+          pgid: 1004
+          url: user4.quokka.ninja
+        - name: user5
+          port: 8005
+          puid: 1005
+          pgid: 1005
+          url: user5.quokka.ninja
+        - name: user6
+          port: 8006
+          puid: 1006
+          pgid: 1006
+          url: user6.quokka.ninja
+        - name: user7
+          port: 8007
+          puid: 1007
+          pgid: 1007
+          url: user7.quokka.ninja
+        - name: user8
+          port: 8008
+          puid: 1008
+          pgid: 1008
+          url: user8.quokka.ninja
+        - name: user9
+          port: 8009
+          puid: 1009
+          pgid: 1009
+          url: user9.quokka.ninja
+        - name: user10
+          port: 8010
+          puid: 1010
+          pgid: 1010
+          url: user10.quokka.ninja

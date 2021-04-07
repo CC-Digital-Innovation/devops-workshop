@@ -1,0 +1,48 @@
+--- 
+version: "3"
+services:
+  fake-switch:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${CONTAINER_NAME:-fake-switch-master}
+    runtime: sysbox-runc
+    environment:
+      - SWITCH_MODEL=cisco_2960_48TT_L
+    ports:
+      - "2200:22"
+    restart: unless-stopped
+    
+expand:
+  vars:
+  services:
+    - name: "{{ name }}"
+      service:
+        image: fake-switches_fake-switch
+        restart: unless-stopped
+        environment:
+          - SWITCH_HOSTNAME={{ name }}
+        ports:
+          - "{{ port }}:22"
+      loop:
+        - name: switch1
+          port: 2201
+        - name: switch2
+          port: 2202
+        - name: switch3
+          port: 2203
+        - name: switch4
+          port: 2204
+        - name: switch5
+          port: 2205
+        - name: switch6
+          port: 2206
+        - name: switch7
+          port: 2207
+        - name: switch8
+          port: 2208
+        - name: switch9
+          port: 2209
+        - name: switch10
+          port: 2210
+          

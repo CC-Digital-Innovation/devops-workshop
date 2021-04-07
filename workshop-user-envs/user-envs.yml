@@ -1,0 +1,176 @@
+  version: '3'
+  services:
+    user1:
+      image: workshop-user-envs_code-server
+      container_name: workshop-user1-env
+      runtime: sysbox-runc
+      environment:
+        - PUID=1001
+        - PGID=1001
+        - TZ=US/Eastern
+        - PASSWORD=workshop
+        - SUDO_PASSWORD=root
+        - VIRTUAL_HOST=user1.quokka.ninja
+        - VIRTUAL_PORT=8443
+      volumes:
+        - /home/workshop/devops-workshop/data/userdata/user1/config:/config
+      expose:
+        - 8443
+      restart: unless-stopped
+    user2:
+      image: workshop-user-envs_code-server
+      container_name: workshop-user2-env
+      runtime: sysbox-runc
+      environment:
+        - PUID=1002
+        - PGID=1002
+        - TZ=US/Eastern
+        - PASSWORD=workshop
+        - SUDO_PASSWORD=root
+        - VIRTUAL_HOST=user2.quokka.ninja
+        - VIRTUAL_PORT=8443
+      volumes:
+        - /home/workshop/devops-workshop/data/userdata/user2/config:/config
+      expose:
+        - 8443
+      restart: unless-stopped
+    user3:
+      image: workshop-user-envs_code-server
+      container_name: workshop-user3-env
+      runtime: sysbox-runc
+      environment:
+        - PUID=1003
+        - PGID=1003
+        - TZ=US/Eastern
+        - PASSWORD=workshop
+        - SUDO_PASSWORD=root
+        - VIRTUAL_HOST=user3.quokka.ninja
+        - VIRTUAL_PORT=8443
+      volumes:
+        - /home/workshop/devops-workshop/data/userdata/user3/config:/config
+      expose:
+        - 8443
+      restart: unless-stopped
+    user4:
+      image: workshop-user-envs_code-server
+      container_name: workshop-user4-env
+      runtime: sysbox-runc
+      environment:
+        - PUID=1004
+        - PGID=1004
+        - TZ=US/Eastern
+        - PASSWORD=workshop
+        - SUDO_PASSWORD=root
+        - VIRTUAL_HOST=user4.quokka.ninja
+        - VIRTUAL_PORT=8443
+      volumes:
+        - /home/workshop/devops-workshop/data/userdata/user4/config:/config
+      expose:
+        - 8443
+      restart: unless-stopped
+    user5:
+      image: workshop-user-envs_code-server
+      container_name: workshop-user5-env
+      runtime: sysbox-runc
+      environment:
+        - PUID=1005
+        - PGID=1005
+        - TZ=US/Eastern
+        - PASSWORD=workshop
+        - SUDO_PASSWORD=root
+        - VIRTUAL_HOST=user5.quokka.ninja
+        - VIRTUAL_PORT=8443
+      volumes:
+        - /home/workshop/devops-workshop/data/userdata/user5/config:/config
+      expose:
+        - 8443
+      restart: unless-stopped
+    user6:
+      image: workshop-user-envs_code-server
+      container_name: workshop-user6-env
+      runtime: sysbox-runc
+      environment:
+        - PUID=1006
+        - PGID=1006
+        - TZ=US/Eastern
+        - PASSWORD=workshop
+        - SUDO_PASSWORD=root
+        - VIRTUAL_HOST=user6.quokka.ninja
+        - VIRTUAL_PORT=8443
+      volumes:
+        - /home/workshop/devops-workshop/data/userdata/user6/config:/config
+      expose:
+        - 8443
+      restart: unless-stopped
+    user7:
+      image: workshop-user-envs_code-server
+      container_name: workshop-user7-env
+      runtime: sysbox-runc
+      environment:
+        - PUID=1007
+        - PGID=1007
+        - TZ=US/Eastern
+        - PASSWORD=workshop
+        - SUDO_PASSWORD=root
+        - VIRTUAL_HOST=user7.quokka.ninja
+        - VIRTUAL_PORT=8443
+      volumes:
+        - /home/workshop/devops-workshop/data/userdata/user7/config:/config
+      expose:
+        - 8443
+      restart: unless-stopped
+    user8:
+      image: workshop-user-envs_code-server
+      container_name: workshop-user8-env
+      runtime: sysbox-runc
+      environment:
+        - PUID=1008
+        - PGID=1008
+        - TZ=US/Eastern
+        - PASSWORD=workshop
+        - SUDO_PASSWORD=root
+        - VIRTUAL_HOST=user8.quokka.ninja
+        - VIRTUAL_PORT=8443
+      volumes:
+        - /home/workshop/devops-workshop/data/userdata/user8/config:/config
+      expose:
+        - 8443
+      restart: unless-stopped
+    user9:
+      image: workshop-user-envs_code-server
+      container_name: workshop-user9-env
+      runtime: sysbox-runc
+      environment:
+        - PUID=1009
+        - PGID=1009
+        - TZ=US/Eastern
+        - PASSWORD=workshop
+        - SUDO_PASSWORD=root
+        - VIRTUAL_HOST=user9.quokka.ninja
+        - VIRTUAL_PORT=8443
+      volumes:
+        - /home/workshop/devops-workshop/data/userdata/user9/config:/config
+      expose:
+        - 8443
+      restart: unless-stopped
+    user10:
+      image: workshop-user-envs_code-server
+      container_name: workshop-user10-env
+      runtime: sysbox-runc
+      environment:
+        - PUID=10010
+        - PGID=10010
+        - TZ=US/Eastern
+        - PASSWORD=workshop
+        - SUDO_PASSWORD=root
+        - VIRTUAL_HOST=user10.quokka.ninja
+        - VIRTUAL_PORT=8443
+      volumes:
+        - /home/workshop/devops-workshop/data/userdata/user10/config:/config
+      expose:
+        - 8443
+      restart: unless-stopped
+  networks:
+    default:
+      external:
+        name: devops-workshop-net

@@ -1,0 +1,117 @@
+  version: '3'
+  services:
+    fake-switch:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        container_name: fake-switch-master
+        runtime: sysbox-runc
+        environment:
+          - SWITCH_MODEL=cisco_2960_48TT_L
+        ports:
+          - "2200:22"
+        restart: unless-stopped
+    switch1:
+      image: fake-switches_fake-switch
+      container_name: fake-switch-1
+      runtime: sysbox-runc
+      environment:
+        - SWITCH_MODEL=cisco_2960_48TT_L
+        - SWITCH_HOSTNAME=switch1
+      ports:
+        - "2201:22"
+      restart: unless-stopped
+    switch2:
+      image: fake-switches_fake-switch
+      container_name: fake-switch-2
+      runtime: sysbox-runc
+      environment:
+        - SWITCH_MODEL=cisco_2960_48TT_L
+        - SWITCH_HOSTNAME=switch2
+      ports:
+        - "2202:22"
+      restart: unless-stopped
+    switch3:
+      image: fake-switches_fake-switch
+      container_name: fake-switch-3
+      runtime: sysbox-runc
+      environment:
+        - SWITCH_MODEL=cisco_2960_48TT_L
+        - SWITCH_HOSTNAME=switch3
+      ports:
+        - "2203:22"
+      restart: unless-stopped
+    switch4:
+      image: fake-switches_fake-switch
+      container_name: fake-switch-4
+      runtime: sysbox-runc
+      environment:
+        - SWITCH_MODEL=cisco_2960_48TT_L
+        - SWITCH_HOSTNAME=switch4
+      ports:
+        - "2204:22"
+      restart: unless-stopped
+    switch5:
+      image: fake-switches_fake-switch
+      container_name: fake-switch-5
+      runtime: sysbox-runc
+      environment:
+        - SWITCH_MODEL=cisco_2960_48TT_L
+        - SWITCH_HOSTNAME=switch5
+      ports:
+        - "2205:22"
+      restart: unless-stopped
+    switch6:
+      image: fake-switches_fake-switch
+      container_name: fake-switch-6
+      runtime: sysbox-runc
+      environment:
+        - SWITCH_MODEL=cisco_2960_48TT_L
+        - SWITCH_HOSTNAME=switch6
+      ports:
+        - "2206:22"
+      restart: unless-stopped
+    switch7:
+      image: fake-switches_fake-switch
+      container_name: fake-switch-7
+      runtime: sysbox-runc
+      environment:
+        - SWITCH_MODEL=cisco_2960_48TT_L
+        - SWITCH_HOSTNAME=switch7
+      ports:
+        - "2207:22"
+      restart: unless-stopped
+    switch8:
+      image: fake-switches_fake-switch
+      container_name: fake-switch-8
+      runtime: sysbox-runc
+      environment:
+        - SWITCH_MODEL=cisco_2960_48TT_L
+        - SWITCH_HOSTNAME=switch8
+      ports:
+        - "2208:22"
+      restart: unless-stopped
+    switch9:
+      image: fake-switches_fake-switch
+      container_name: fake-switch-9
+      runtime: sysbox-runc
+      environment:
+        - SWITCH_MODEL=cisco_2960_48TT_L
+        - SWITCH_HOSTNAME=switch9
+      ports:
+        - "2209:22"
+      restart: unless-stopped
+    switch10:
+      image: fake-switches_fake-switch
+      container_name: fake-switch-10
+      runtime: sysbox-runc
+      environment:
+        - SWITCH_MODEL=cisco_2960_48TT_L
+        - SWITCH_HOSTNAME=switch10
+      ports:
+        - "2210:22"
+      restart: unless-stopped
+  networks:
+    default:
+      external:
+        name: devops-workshop-net
