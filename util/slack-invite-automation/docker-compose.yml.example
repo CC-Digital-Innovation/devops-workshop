@@ -7,7 +7,7 @@ services:
     environment:
       - COMMUNITY_NAME="DevOps Workshop"
       - SLACK_URL="workspace.slack.com"
-      - SLACK_TOKEN="SLACK_WEBHOOK_URL"
+      - SLACK_TOKEN="[Replace with User OAuth Token, should look like xoxp-....]"
       - VIRTUAL_HOST=slack.quokka.ninja
       - VIRTUAL_PORT=3000
     # ports:
