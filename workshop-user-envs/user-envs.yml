@@ -1,7 +1,7 @@
   version: '3'
   services:
     user1:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user1-env
       runtime: sysbox-runc
       environment:
@@ -18,7 +18,7 @@
         - 8443
       restart: unless-stopped
     user2:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user2-env
       runtime: sysbox-runc
       environment:
@@ -35,7 +35,7 @@
         - 8443
       restart: unless-stopped
     user3:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user3-env
       runtime: sysbox-runc
       environment:
@@ -52,7 +52,7 @@
         - 8443
       restart: unless-stopped
     user4:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user4-env
       runtime: sysbox-runc
       environment:
@@ -69,7 +69,7 @@
         - 8443
       restart: unless-stopped
     user5:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user5-env
       runtime: sysbox-runc
       environment:
@@ -86,7 +86,7 @@
         - 8443
       restart: unless-stopped
     user6:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user6-env
       runtime: sysbox-runc
       environment:
@@ -103,7 +103,7 @@
         - 8443
       restart: unless-stopped
     user7:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user7-env
       runtime: sysbox-runc
       environment:
@@ -120,7 +120,7 @@
         - 8443
       restart: unless-stopped
     user8:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user8-env
       runtime: sysbox-runc
       environment:
@@ -137,7 +137,7 @@
         - 8443
       restart: unless-stopped
     user9:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user9-env
       runtime: sysbox-runc
       environment:
@@ -154,7 +154,7 @@
         - 8443
       restart: unless-stopped
     user10:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user10-env
       runtime: sysbox-runc
       environment:

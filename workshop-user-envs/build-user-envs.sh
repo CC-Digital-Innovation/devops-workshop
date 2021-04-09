@@ -8,7 +8,7 @@ HEADER
   for i in $(seq 10); do
     cat <<BLOCK
     user$i:
-      image: workshop-user-envs_code-server
+      image: workshop-core-svcs_code-server
       container_name: workshop-user$i-env
       runtime: sysbox-runc
       environment:
