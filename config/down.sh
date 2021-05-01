@@ -6,7 +6,6 @@ docker-compose -f fake-switches.yml down
 
 ## stop user dev env containers
 cd $HOME/devops-workshop/workshop-user-envs
-docker-compose -f core-svcs.yml down
 docker-compose -f user-envs.yml down
 
 ## stop slack-invite-automation

@@ -38,3 +38,4 @@ OTHER
 # buildComposeYaml | docker-compose -f - "$@" up -d --build
 buildComposeYaml > user-envs.yml
 docker-compose -f user-envs.yml up -d --build
+sleep 30

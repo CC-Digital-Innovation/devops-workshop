@@ -48,6 +48,7 @@ cd $HOME/devops-workshop/config
 sudo chown -R workshop:workshop $HOME/devops-workshop/data/userdata
 for d in $HOME/devops-workshop/data/userdata/user*/config; do cp .ansible.cfg "$d"; done
 for d in $HOME/devops-workshop/data/userdata/user*/config/workspace; do cp -R ./switch-ansible-example "$d"; done
+for d in $HOME/devops-workshop/data/userdata/user*/config/workspace; do cp -R ./switch-watcher "$d"; done
 
 ## show running containers
 docker ps

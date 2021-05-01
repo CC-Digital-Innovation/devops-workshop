@@ -2,11 +2,11 @@
 
 ## strart user fake switch contianers
 cd $HOME/devops-workshop/fake-switches
-docker-compose-expand down
+docker-compose -f fake-switches.yml down
 
 ## start user dev env containers
 cd $HOME/devops-workshop/workshop-user-envs
-docker-compose-expand down
+docker-compose -f user-envs.yml down
 
 ## show running containers
 docker ps
@@ -48,6 +48,7 @@ cd $HOME/devops-workshop/config
 sudo chown -R workshop:workshop $HOME/devops-workshop/data/userdata
 for d in $HOME/devops-workshop/data/userdata/user*/config; do cp .ansible.cfg "$d"; done
 for d in $HOME/devops-workshop/data/userdata/user*/config/workspace; do cp -R ./switch-ansible-example "$d"; done
+for d in $HOME/devops-workshop/data/userdata/user*/config/workspace; do cp -R ./switch-watcher "$d"; done
 
 ## show running containers
 docker ps
