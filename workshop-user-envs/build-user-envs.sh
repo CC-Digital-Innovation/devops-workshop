@@ -12,8 +12,8 @@ HEADER
       container_name: workshop-user$i-env
       runtime: sysbox-runc
       environment:
-        - PUID=100$i
-        - PGID=100$i
+        - PUID=1002
+        - PGID=1002
         - TZ=US/Eastern
         - PASSWORD=workshop
         - SUDO_PASSWORD=root
