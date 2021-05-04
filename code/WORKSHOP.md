@@ -1,4 +1,19 @@
-# Environment Registry
+# Welcome to the DevOps Workshop
+
+Get ready to pipeline and to be introduced to he magic of automation, containers, IaC (Infrastructure-as-Code), revision control, and observability.
+
+```text
+┌──────────┐     ┌────────────────────┐      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+│          │     │                    │      │              │      │              │      │              │
+│  Code:   │     │  Version Control:  │      │  Build:      │      │  Release:    │      │  Operate:    │
+│          │     │                    │      │              │      │              │      │              │
+│  VSCode  ├────►│  GitHub            ├─────►│  Docker      ├─────►│  Watchtower  ├─────►│  Prometheus  │
+│          │     │                    │      │  Docker Hub  │      │  Docker Hub  │      │  Grafana     │
+│          │     │                    │      │              │      │              │      │              │
+└──────────┘     └────────────────────┘      └──────────────┘      └──────────────┘      └──────────────┘
+````
+
+## Environment Registry
 
 https://bit.ly/3t4YwXv
 
