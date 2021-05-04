@@ -46,7 +46,7 @@ cd $HOME/devops-workshop/workshop-user-envs
 ## stage data in containers
 cd $HOME/devops-workshop
 sudo chown -R workshop:workshop $HOME/devops-workshop/data/userdata
-for d in $HOME/devops-workshop/data/userdata/user*/config; do cp .ansible.cfg "$d"; done
+for d in $HOME/devops-workshop/data/userdata/user*/config; do cp ./code/.ansible.cfg "$d"; done
 for d in $HOME/devops-workshop/data/userdata/user*/config/workspace; do cp -R ./code "$d"; done
 
 ## show running containers
