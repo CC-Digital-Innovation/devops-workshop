@@ -38,20 +38,50 @@ https://bit.ly/3t4YwXv
 
       ```bash
       docker logs -f hello-world
+
+        ___________________
+      | 04/05/2021 15:55:27 |
+        ===================
+                        \
+                        \
+                           ^__^
+                           (oo)\_______
+                           (__)\       )\/\
+                              ||----w |
+                              ||     ||
+       _   _        _  _         __        __              _      _  _
+      | | | |  ___ | || |  ___   \ \      / /  ___   _ __ | |  __| || |
+      | |_| | / _ \| || | / _ \   \ \ /\ / /  / _ \ | '__|| | / _` || |
+      |  _  ||  __/| || || (_) |   \ V  V /  | (_) || |   | || (_| ||_|
+      |_| |_| \___||_||_| \___/     \_/\_/    \___/ |_|   |_| \__,_|(_)
       ```
 
       *NOTE: CTRL-C to break viewing the logs, or you can just open another terminal window.*
 
-10. Create a GitHub repo called hello-world
+10. Verify the flask app is running.
 
-11. Configure Git in your workspace
+      ```html
+      http://localhost:5000
+      ```
+
+11. Change the message by editing message.txt and rebuild and deploy the contianer
+
+      ```bash
+      docker stop hello-world
+      docker-compose up -d --build
+      docker logs -f hello-world
+      ```
+
+12. Create a GitHub repo called hello-world
+
+13. Configure Git in your workspace
 
     ```bash
     git config --global user.email "you@example.com"
     git config --global user.name "Your Name"
     ```
 
-12. Commit hello-world to your newly created GitHub Repo
+14. Commit hello-world to your newly created GitHub Repo
 
       *Note:  Make sure you are in the hello-world directory.*
 
@@ -64,7 +94,7 @@ https://bit.ly/3t4YwXv
       git push -u origin main
       ```
 
-13. Create a Docker Hub Repository
+15. Create a Docker Hub Repository
     1. Name:  hello-world
     2. Public
     3. Build Settings
