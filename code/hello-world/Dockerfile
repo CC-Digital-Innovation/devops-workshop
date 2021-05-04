@@ -14,7 +14,7 @@ COPY --from=builder /root/.local /root/.local
 COPY ./src .
 
 # expose Flask Hello World app on port 5000
-# EXPOSE 5000
+EXPOSE 5000
 
 # update PATH
 ENV PATH=/root/.local:$PATH

@@ -31,7 +31,7 @@ https://bit.ly/3t4YwXv
       ```
 
 9. Let's check the container started and is running
-      
+
       ```bash
       docker ps
       ```
@@ -39,11 +39,21 @@ https://bit.ly/3t4YwXv
       ```bash
       docker logs -f hello-world
       ```
+
       *NOTE: CTRL-C to break viewing the logs, or you can just open another terminal window.*
 
 10. Create a GitHub repo called hello-world
 
-11. Commit hello-world to your newly created GitHub Repo
+11. Configure Git in your workspace
+
+    ```bash
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+    ```
+
+12. Commit hello-world to your newly created GitHub Repo
+
+      *Note:  Make sure you are in the hello-world directory.*
 
       ```text
       git init
@@ -53,6 +63,17 @@ https://bit.ly/3t4YwXv
       git remote add origin https://github.com/[YOUR_GITHUB]/hello-world.git
       git push -u origin main
       ```
+
+13. Create a Docker Hub Repository
+    1. Name:  hello-world
+    2. Public
+    3. Build Settings
+       1. Click GitHub Logo
+          1. Select Organization (aka your GitHub account)
+          2. Select Repository (hello-world, this is the repo we just committed to.)
+          3. Click the + to add a build rule
+             1. Change the branch to "main"
+    4. Click "Create & Build"
 
 ## Noteworthy Helpers
 
