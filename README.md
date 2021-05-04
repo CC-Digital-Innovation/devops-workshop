@@ -6,7 +6,7 @@ DevOps Workshop Platform Infrastructure as Code
 
 _Note: If you have any questions or comments you can always use GitHub discussions, or DM me on the twitter @rbocchinfuso._
 
-#### Why
+### Why
 
 Developing a DevOps Workshop platform and curriculum.
 
@@ -22,27 +22,27 @@ Developing a DevOps Workshop platform and curriculum.
 
 - Download code from GitHub
 
-  ```
+  ```bash
   git clone https://github.com/CC-Digital-Innovation/devops-workshop.git
   ```
 
   _Note: If you don't have Git installed you can also just grab the zip:
   [https://github.com/CC-Digital-Innovation/devops-workshop/archive/master.zip](https://github.com/CC-Digital-Innovation/devops-workshop/archive/master.zip)_
 
-### ***DEPRECATED***
+### **_DEPRECATED_**
 
 ~~- Make any required changes to the docker-compose-expand.yml files in the ./devops-workshop/workshop-user-envs and ./devops-workshop/fake-switches directory~~
 
 - ~~Launch fake switch containers~~
 
-  ```
+  ```bash
   cd ./devops-workshop/fake-switches
   docker-compose-expand up -d --build
   ```
 
 - ~~Launch required user env containers, and shared git and Jenkins containers~~
 
-  ```
+  ```bash
   cd ./devops-workshop/workshop-user-envs
   docker-compose-expand up -d --build
   ```
@@ -59,11 +59,12 @@ Developing a DevOps Workshop platform and curriculum.
   - **WARNING: DESTRUCTIVE ACTION**
   - INFO: Significantly faster han build.sh because the containers are not rebuilt
 - **./control-scripts/nuke.sh**: Cleans up all containers
+
   - **WARNING: DESTRUCTIVE ACTION**
 
 - Check that user envs, fake switches, git and Jenkins containers are running
 
-  ```
+  ```bash
   docker ps
   ```
 
@@ -71,15 +72,15 @@ Developing a DevOps Workshop platform and curriculum.
 
 ## Configuration
 
-
 - ~~Setup user envs~~
+
   - **DEPRECATED.** Now handled by build control scripts.
 
-  ```
-  cd ./devops-workshop/config
-  chmod 755 setup.sh
-  sh -x ./setup.sh
-  ```
+    ```bash
+    cd ./devops-workshop/config
+    chmod 755 setup.sh
+    sh -x ./setup.sh
+    ```
 
   _The above Adds .ansible.cfg and simple ansible switch config playbook to each user env._
 
@@ -87,21 +88,21 @@ Developing a DevOps Workshop platform and curriculum.
 
 - Access the user cloud dev environment
 
-  ```
+  ```http
   http://user1.quokka.ninja
   ```
 
   - ~~ The included _docker-compose-expand.yml_ file deploys eleven (10) users envs on port 8000 - 8010.~~
-  - Ten user environments are deployed and registerd with Nginx reverse proxy.  Environments are accessible using the url(s) http://user[1 to 10].quokka.ninja 
+  - Ten user environments are deployed and registerd with Nginx reverse proxy. Environments are accessible using the url(s) http://user[1 to 10].quokka.ninja
   - ~~The default user env password configured in _docker-compose-expand.yml_ is "workshop"~~
   - The default user env password is "workshop"
   - ~~The default sudo password configure in the _docker-compose-expand.yml_ file is "root"~~
   - The default sudo password configure is "root"
-  - 
+  -
 
 - SSH to fake switch form your user env
 
-  ```
+  ```bash
   ssh root@hostname -p 2200
   ```
 
@@ -116,7 +117,7 @@ Developing a DevOps Workshop platform and curriculum.
 
   - Launch Terminal from cloud dev env (Ctrl+Shift+`)
 
-  ```
+  ```bash
   cd ~/workspace/code/switch-ansible-example
   ansible-playbook --list-hosts -i inventory example-playbook.yml
   ansible-playbook -i inventory example-playbook.yml
@@ -125,13 +126,13 @@ Developing a DevOps Workshop platform and curriculum.
 ## To Do
 
 - [ ] Configure Gitea
-  - **DEPRECATED.**  Decided to use GitHub.
+  - **DEPRECATED.** Decided to use GitHub.
 - [ ] Configure Jenkins
-  - **DEPRECATED.**  Decided to use Watchtower and Docker Hub, for simplicity and to give the User control and visability of the build and deploy process within their user env.
+  - **DEPRECATED.** Decided to use Watchtower and Docker Hub, for simplicity and to give the User control and visability of the build and deploy process within their user env.
 - [ ] Connect the E2E pipeline
   - **COMPLETED**
 - [ ] Build lab scenarios
-  - **IN PROGRESS.**  Documenting and fixing issues and bugs.
+  - **IN PROGRESS.** Documenting and fixing issues and bugs.
 - [x] Add cAdvisor, Prometheus and Grafana for observability
 
 ## Reference Information
