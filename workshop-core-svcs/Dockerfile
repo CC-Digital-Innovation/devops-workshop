@@ -10,7 +10,7 @@ RUN apt-get -y install software-properties-common
 RUN apt-add-repository ppa:ansible/ansible
 RUN apt-get -y install ansible
 RUN apt-get update
-RUN apt-get -y install docker-ce docker-ce-cli containerd.io
+RUN apt-get -y install docker-ce docker-ce-cli containerd.io=1.4.4-1
 RUN usermod -aG docker abc
 RUN pip3 install --upgrade pip
 RUN pip3 install docker-compose

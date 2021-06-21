@@ -1,3 +1,46 @@
+---
+theme: gaia
+_class: lead
+paginate: true
+backgroundColor: #fff
+backgroundImage: url('https://marp.app/assets/hero-background.jpg')
+---
+
+![bg left:40% 80%](https://www.kloia.com/hubfs/devops-workshop.png)
+
+# **DevOps Workshop**
+
+
+
+https://marp.app/
+
+---
+
+# Workshop-as-Code
+
+Let's build the environment
+
+```
+
+
+Split pages by horizontal ruler (`---`). It's very simple! :satisfied:
+
+```markdown
+# Slide 1
+
+foobar
+
+---
+
+# Slide 2
+
+foobar
+```
+
+
+
+
+
 # Welcome to the DevOps Workshop
 
 Get ready to pipeline and to be introduced to he magic of automation, containers, IaC (Infrastructure-as-Code), revision control, and observability.
@@ -121,23 +164,20 @@ https://bit.ly/3t4YwXv
     1. Name: hello-world
     2. Public
     3. Build Settings
-       1. Click Builds tab
-       2. Click GitHub Logo
+       1. Click GitHub Logo
           1. Select Organization (aka your GitHub account)
           2. Select Repository (hello-world, this is the repo we just committed to.)
-          3. Click the + to add a build rule _(if no build rule exists)_
-             1. Change the branch to "main" _(this may be set to "master", if so, change "master" to "main")_
-    1. Click "Save & Build"
+          3. Click the + to add a build rule
+             1. Change the branch to "main"
+    4. Click "Create & Build"
 
-1.  Stop the hello-world container
+16. Stop the hello-world container
 
     ```bash
     docker stop hello-world
     ```
 
-2.  Modify the docker-compose.yml file use the docker image from DockerHub
-
-    _Note:  Add # to comment lines prefixed with "-" and remove # to uncomment lines prefixed with "+"_
+17. Modify the docker-compose.yml file use the docker image from DockerHub
 
     ```diff
     version: "3"
@@ -156,7 +196,7 @@ https://bit.ly/3t4YwXv
        restart: unless-stopped
     ```
 
-3.  Start the Hello-World container
+18. Start the Hello-World container
 
     ```bash
     cd ./code/hello-world
@@ -165,16 +205,16 @@ https://bit.ly/3t4YwXv
 
     _Note: For this to work your Docker Hub image has to be build and available. This can take a few minutes, so monitor the build and image availability before proceeding to this step._
 
-4.  Start Watchtower
+19. Start Watchtower
 
     ```
     cd ./code/watchtower
     docker-compose up -d
     ```
 
-5.  Modify the message in message.txt
+20. Modify the message in message.txt
 
-7.  Commit changes to GitHub
+21. Commit changes to GitHub
     _The easy way._
 
     ```bash
