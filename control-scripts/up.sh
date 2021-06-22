@@ -17,8 +17,8 @@ cd $HOME/devops-workshop/util/portainer
 docker-compose up -d --build
 
 ## start slack-invite-automation
-cd $HOME/devops-workshop/util/slack-invite-automation
-docker-compose up -d --build
+# cd $HOME/devops-workshop/util/slack-invite-automation
+# docker-compose up -d --build
 
 ## strart user fake switch contianers
 cd $HOME/devops-workshop/fake-switches

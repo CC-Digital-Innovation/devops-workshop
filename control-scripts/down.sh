@@ -9,8 +9,8 @@ cd $HOME/devops-workshop/workshop-user-envs
 docker-compose -f user-envs.yml down
 
 ## stop slack-invite-automation
-cd $HOME/devops-workshop/util/slack-invite-automation
-docker-compose down
+# cd $HOME/devops-workshop/util/slack-invite-automation
+# docker-compose down
 
 ## stop portainer
 cd $HOME/devops-workshop/util/portainer

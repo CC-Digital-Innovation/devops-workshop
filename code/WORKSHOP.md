@@ -15,13 +15,13 @@ Get ready to pipeline and to be introduced to he magic of automation, containers
 
 ### Claim an environment
 
-https://bit.ly/3t4YwXv
+[Open Google Sheet and Claim and Environment](https://bit.ly/3t4YwXv)
 
 ## Getting Started
 
 ### Prerequisite Tasks
 
-1. Register with the DevOps Slack Workspace (http://slack.quokka.ninja)
+1. [Register with the DevOps Workshop Slack Workspace](https://join.slack.com/t/cc-devops-workshop/shared_invite/zt-s14a90yt-QGax39XKiwutW3MYyncLiQ)
 
 2. Claim a User Env and Fake Switch in the Environment Registry
 
@@ -34,14 +34,14 @@ https://bit.ly/3t4YwXv
 
 5. Create a GitHub account (if you don't already have one)
 
-   1. https://github.com/
+   1. [https://github.com/](https://github.com/)
 
 6. Create a Docker Hub Account (if you don't' already have one)
 
-   1. https://hub.docker.com/
+   1. [https://hub.docker.com/](https://hub.docker.com/)
 
 7. Connect Docker Hub to GitHub to automate builds on Git commits
-   1. https://docs.docker.com/docker-hub/builds/link-source/
+   1. [https://docs.docker.com/docker-hub/builds/link-source/](https://docs.docker.com/docker-hub/builds/link-source/)
 
 ### Hello World
 
